@@ -13,6 +13,8 @@ export default function LoginForm() {
           <form className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
+                  <Image src="/logo.png" alt="Spectra-Logo" width={180} height={100} />
+                                   
                 <h1 className="text-2xl font-bold">Forgot Password?</h1>
                 <p className="w-full text-muted-foreground">
                   Enter your email address to get the password reset link
