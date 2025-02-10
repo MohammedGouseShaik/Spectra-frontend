@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-// import { Separator } from "@/components/ui/separator";
+// import { Separator } from "@/components/ui/separator";style={{fontWeight:"550"}} 
 import Image from "next/image";
 
 export default function SignupComponent() {
@@ -15,11 +15,13 @@ export default function SignupComponent() {
               <form className="p-6 md:p-8">
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col items-center text-center ">
+                    <Image src="/logo.png" alt="Spectra-Logo" width={180} height={100} />
                    
-                    <h1 className="text-2xl font-bold pt--2  mb-2" >Create an account</h1>
+                                  
+                    <h1 className="text-xl font-semibold pt-3  mb-2" >Create an account</h1>
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name">Name:</Label>
                     <Input
                       id="name"
                       type="text"
@@ -27,7 +29,7 @@ export default function SignupComponent() {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">Email:</Label>
                     <Input
                       id="email"
                       type="email"
@@ -35,7 +37,7 @@ export default function SignupComponent() {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="password">Password</Label>
+                    <Label htmlFor="password">Password:</Label>
                     <Input
                       id="password"
                       type="password"
@@ -82,8 +84,8 @@ export default function SignupComponent() {
                   </div>
                   <div className="text-center text-sm">
                     Already have an account?{" "}
-                    <a href="/login" className="underline underline-offset-4">
-                      Sign in here
+                    <a href="/login" className="underline underline-offset-4 font-bold">
+                      Sign in
                     </a>
                   </div>
                 </div>

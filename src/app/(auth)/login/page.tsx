@@ -13,7 +13,8 @@ export default function LoginForm() {
           <form className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
-                <h1 className="text-2xl font-bold">Welcome back</h1>
+                <Image src="/logo.png" alt="Spectra-Logo" width={180} height={100} />
+                {/* <h1 className="text-2xl font-bold">Welcome back</h1> */}
                 <p className="text-balance text-muted-foreground">
                   Login to your Spectra account
                 </p>
@@ -28,17 +29,14 @@ export default function LoginForm() {
                 />
               </div>
               <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <a
-                    href="#"
-                    className="ml-auto text-sm underline-offset-2 hover:underline"
-                  >
-                    Forgot your password?
-                  </a>
-                </div>
-                <Input id="password" type="password" required />
-              </div>
+  <Label htmlFor="password">Password</Label>
+  <Input id="password" type="password" required />
+  <div className="text-right text-sm">
+    <a href="#" className="underline-offset-2 hover:underline">
+      Forgot your password?
+    </a>
+  </div>
+</div>
               <Button type="submit" className="w-full">
                 Login
               </Button>
