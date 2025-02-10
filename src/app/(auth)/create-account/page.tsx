@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
+// import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 
 export default function SignupComponent() {
@@ -13,7 +13,7 @@ export default function SignupComponent() {
           <Card className="overflow-hidden">
             <CardContent className="grid p-0 md:grid-cols-2">
               <form className="p-6 md:p-8">
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-4">
                   <div className="flex flex-col items-center text-center ">
                     {/* <Image
                       src="/assets/parabola9-logo.png"
@@ -48,14 +48,13 @@ export default function SignupComponent() {
                       required
                     />
                   </div>
-                  <div className="text-sm text-muted-foreground">
-                    By continuing, you agree to our{" "}
+                  {/* <div className="text-sm text-muted-foreground">
+                     By continuing, you agree to our{" "}
                     <a href="#" className="underline underline-offset-4 font-bold">
                       terms of service
-                    </a>
-                    .
-                  </div>
-                  <Button type="submit" className="w-full">
+                    </a> 
+                  </div> */}
+                  <Button type="submit" className="w-full" >
                     Sign up
                   </Button>
                   <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
