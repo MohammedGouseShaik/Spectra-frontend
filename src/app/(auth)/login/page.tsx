@@ -32,7 +32,7 @@ export default function LoginForm() {
   <Label htmlFor="password">Password</Label>
   <Input id="password" type="password" required />
   <div className="text-right text-sm">
-    <a href="#" className="underline-offset-2 hover:underline">
+    <a href="/forgot-password" className="underline-offset-2 hover:underline">
       Forgot your password?
     </a>
   </div>
