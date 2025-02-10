@@ -15,13 +15,7 @@ export default function SignupComponent() {
               <form className="p-6 md:p-8">
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col items-center text-center ">
-                    {/* <Image
-                      src="/assets/parabola9-logo.png"
-                      alt="Parabola9 Logo"
-                      width={170}
-                      height={50}
-                      className="mb-5"
-                    /> */}
+                   
                     <h1 className="text-2xl font-bold pt--2  mb-2" >Create an account</h1>
                   </div>
                   <div className="grid gap-2">
