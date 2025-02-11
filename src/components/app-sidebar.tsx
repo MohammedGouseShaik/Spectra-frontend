@@ -4,8 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import {
   AudioWaveform,
-  // BookOpen,
-  // Bot,
+  
   Command,
   LayoutDashboard,
   Frame,
@@ -19,9 +18,8 @@ import {
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-// import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
-// import { TeamSwitcher } from "@/components/team-switcher";
+
 import {
   Sidebar,
   SidebarContent,
@@ -31,9 +29,7 @@ import {
 } from "@/components/ui/sidebar";
 
 import Image from "next/image";
-// import logoBW from "public/logo_bw.jpg";
 
-// This is sample data.
 const data = {
   user: {
     name: "John Doe",
@@ -60,7 +56,7 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/",
+      url: "/dashboard",
       icon: LayoutDashboard,
       isActive: false,
       items: [
@@ -110,14 +106,6 @@ const data = {
           title: "Sample Videos",
           url: "#",
         },
-        // {
-        //   title: "Tutorials",
-        //   url: "#",
-        // },
-        // {
-        //   title: "Changelog",
-        //   url: "#",
-        // },
       ],
     },
     {
@@ -171,14 +159,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        {/* <TeamSwitcher teams={data.teams} /> */}
-        {/* Parabola9 logo Here */}
         <div>
           <Image
-            src="/logo_bw.jpg"
+            src="/logo.png"
             alt="company-logo"
-            width={800} // Specify the width
-            height={200} // Specify the height
+            width={800} 
+            height={200} 
             style={{
               padding: "5px",
               maxWidth: "85%",

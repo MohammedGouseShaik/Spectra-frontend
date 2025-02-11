@@ -83,7 +83,7 @@ export default function SignupComponent() {
                   </div>
                   <div className="text-center text-sm">
                     Already have an account?{" "}
-                    <a href="/login" className="underline underline-offset-4 font-bold">
+                    <a href="/" className="underline underline-offset-4 font-bold">
                       Sign in
                     </a>
                   </div>
@@ -91,7 +91,7 @@ export default function SignupComponent() {
               </form>
               <div className="relative hidden bg-muted md:block">
                 <Image
-                  src="/login_3.jpg"
+                  src="/logo_4.jpg"
                   width={1000}
                   height={1000}
                   alt="Signup Image"
