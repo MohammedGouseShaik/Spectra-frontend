@@ -1,8 +1,5 @@
-"use client"
-import Image from "next/image";
-import MailList from "./components/chat-interface/chat";
+import Dashboard from "./components/dashboard/page";
+
 export default function Home() {
-  return (
-   <MailList/>
-  );
+  return <Dashboard />;
 }
