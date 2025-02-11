@@ -4,7 +4,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { ArrowRight } from 'lucide-react';
+//import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 // const sample_1 = "/assets/slack_1.png";
 
@@ -91,7 +92,7 @@ const SampleVideos: React.FC = () => {
                 size="sm"
                 className="font-bold border-primary text-primary hover:bg-gray-100"
               >
-                Start Video Analysis <ArrowForwardIcon className="ml-2" />
+                Start Video Analysis <ArrowRight className="ml-2" />
               </Button>
             </div>
           </Card>
