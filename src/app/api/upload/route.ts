@@ -109,7 +109,7 @@ export default async function handler(
 
     // Upload to S3
     await axios.put(presignedUrl, file.buffer, {
-      headers: { "Content-Type": file.mimetype },
+      headers: { "Content-Type": "application/json" },
     });
 
     return res.status(200).json({

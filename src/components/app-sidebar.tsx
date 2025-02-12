@@ -85,11 +85,11 @@ const data = {
         },
         {
           title: "Model Configuration",
-          url: "#",
+          url: "/model-configuration",
         },
         {
           title: "Prompt Configuration",
-          url: "#",
+          url: "/prompt-configuration",
         },
       ],
     },
@@ -100,7 +100,7 @@ const data = {
       items: [
         {
           title: "My Videos",
-          url: "#",
+          url: "/video-page",
         },
         {
           title: "Sample Videos",
@@ -115,7 +115,7 @@ const data = {
       items: [
         {
           title: "Profile",
-          url: "#",
+          url: "/user-settings",
         },
         {
           title: "Biling & Usage",
