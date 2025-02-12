@@ -6,6 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import axios from "axios";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const MyVideos = ({ searchQuery }: { searchQuery: string }) => {
   const [videos, setMyVideos] = useState<any[]>([]);
@@ -103,62 +109,77 @@ const MyVideos = ({ searchQuery }: { searchQuery: string }) => {
   );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {filteredVideos.map((video) => (
-        <Card key={video.id} className="w-full border shadow-sm">
-          <Image
-            src={video.thumbnail}
-            alt={video.title}
-            width={1600}
-            height={400}
-            className="rounded-t-lg object-cover w-full h-40"
-          />
-          <CardContent className="p-4 flex flex-col gap-2">
-            <h3 className="text-lg font-semibold text-primary">
-              {video.title}
-            </h3>
+    <TooltipProvider>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredVideos.map((video) => (
+          <Card key={video.id} className="w-full border shadow-sm">
+            <Image
+              src={video.thumbnail}
+              alt={video.title}
+              width={1600}
+              height={400}
+              className="rounded-t-lg object-cover w-full h-40"
+            />
+            <CardContent className="p-4 flex flex-col gap-2">
+              <Tooltip>
+                <TooltipTrigger>
+                  <h3
+                    className="text-lg font-semibold text-primary truncate w-full"
+                    style={{
+                      maxWidth: "100%",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {video.title}
+                  </h3>
+                </TooltipTrigger>
+                <TooltipContent>{video.title}</TooltipContent>
+              </Tooltip>
 
-            {/* Duration & Status Row */}
-            <div className="flex justify-between items-center text-sm text-gray-600">
-              <p>Duration: {video.duration}</p>
-              <Badge
-                variant={
-                  videoStates[video.id] === "RUNNING"
-                    ? "warning"
+              {/* Duration & Status Row */}
+              <div className="flex justify-between items-center text-sm text-gray-600">
+                <p>Duration: {video.duration}</p>
+                <Badge
+                  variant={
+                    videoStates[video.id] === "RUNNING"
+                      ? "warning"
+                      : videoStates[video.id] === "SUCCEEDED"
+                      ? "success"
+                      : videoStates[video.id] === "FAILED"
+                      ? "destructive"
+                      : "secondary"
+                  }
+                >
+                  {videoStates[video.id] || "Loading..."}
+                </Badge>
+              </div>
+
+              {/* Separator */}
+              <hr className="border-t border-gray-300" />
+
+              {/* Upload Info & Button */}
+              <div className="flex justify-between items-center mt-4">
+                <p className="text-xs text-gray-500">
+                  Uploaded: {video.uploaded}
+                </p>
+                <Button
+                  variant="outline"
+                  onClick={() => handleButtonClick(video.id)}
+                >
+                  {videoStates[video.id] === "RUNNING"
+                    ? "Processing..."
                     : videoStates[video.id] === "SUCCEEDED"
-                    ? "success"
-                    : videoStates[video.id] === "FAILED"
-                    ? "destructive"
-                    : "secondary"
-                }
-              >
-                {videoStates[video.id] || "Loading..."}
-              </Badge>
-            </div>
-
-            {/* Separator */}
-            <hr className="border-t border-gray-300" />
-
-            {/* Upload Info & Button */}
-            <div className="flex justify-between items-center mt-4">
-              <p className="text-xs text-gray-500">
-                Uploaded: {video.uploaded}
-              </p>
-              <Button
-                variant="outline"
-                onClick={() => handleButtonClick(video.id)}
-              >
-                {videoStates[video.id] === "RUNNING"
-                  ? "Processing..."
-                  : videoStates[video.id] === "SUCCEEDED"
-                  ? "Go to Chat"
-                  : "Start Analysis"}
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+                    ? "Go to Chat"
+                    : "Start Analysis"}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </TooltipProvider>
   );
 };
 
