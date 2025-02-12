@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface ListViewProps {
   videos: { id: string; title: string; thumbnail: string }[];
@@ -12,7 +13,7 @@ const ListView: React.FC<ListViewProps> = ({ videos }) => {
           key={video.id}
           className="flex items-center bg-gray-200 p-2 rounded-lg shadow-md"
         >
-          <img
+          <Image
             src={video.thumbnail}
             alt={video.title}
             className="w-20 h-20 object-cover rounded-md"
