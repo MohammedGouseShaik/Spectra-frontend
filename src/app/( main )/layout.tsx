@@ -21,10 +21,6 @@ import "../globals.css";
 
 import { AppSidebar } from "@/components/app-sidebar";
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
   DynamicBreadcrumbs,
   // BreadcrumbPage,
   // BreadcrumbSeparator,
