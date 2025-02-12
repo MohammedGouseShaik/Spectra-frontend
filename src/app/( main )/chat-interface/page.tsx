@@ -56,17 +56,39 @@ export default function ChatHistoryComponent() {
   </center>
   
 
-        <ScrollArea className="flex-1 p-4  bg-white">
+        {/* <ScrollArea className="flex-1 p-4  bg-white">
           {[...Array(6)].map((_, i) => (
             <div key={i} className={`flex items-start space-x-3 ${i % 2 === 0 ? 'justify-end' : 'justify-start'}`}> 
               {i % 2 !== 0 && <User className="w-6 h-6 text-green-500" />}
-              <div className={`p-3 rounded-lg ${i % 2 === 0 ? 'bg-blue-100 text-right' : 'bg-green-100 text-left'}`}> 
+              <div className={`p-3 rounded-lg ${i % 2 === 0 ? 'bg-blue-100 text-right ' : 'bg-green-100 text-left'}`}> 
                 {i % 2 === 0 ? "Hello! How can I assist you?" : "I need some information about your services."}
               </div>
               {i % 2 === 0 && <Bot className="w-6 h-6 text-blue-500" />}
             </div>
           ))}
-        </ScrollArea>
+        </ScrollArea> */}
+
+<ScrollArea className="flex-1 p-4 bg-white font-sans font-normal text-sm leading-[18px]">
+  {[...Array(6)].map((_, i) => (
+    <div key={i} className={`flex items-start space-x-2 ${i % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+      {i % 2 !== 0 && <User className="w-5 h-5 text-green-500" />}
+      <div className={`flex flex-col ${i % 2 === 0 ? 'items-end' : 'items-start'}`}>
+        {/* Message container with name inside */}
+        <div className={`p-2 rounded-lg ${i % 2 === 0 ? 'bg-blue-100 text-right' : 'bg-green-100 text-left'}`}>
+          {/* Name */}
+          <span className={`block mb-2 text-[11px] font-medium ${i % 2 === 0 ? 'text-blue-500' : 'text-green-500'}`}>
+            {i % 2 === 0 ? "Spectra" : "John Doe"}
+          </span>
+          {/* Message */}
+          <span className="block mt-0.5 text-xs">
+            {i % 2 === 0 ? "Hello! How can I assist you?" : "I need some information about your services."}
+          </span>
+        </div>
+      </div>
+      {i % 2 === 0 && <Bot className="w-5 h-5 text-blue-500" />}
+    </div>
+  ))}
+</ScrollArea>
         
         {/* Chat Input */}
         <div className="border-t p-4 bg-white shadow-md flex items-center space-x-3">
