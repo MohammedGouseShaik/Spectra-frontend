@@ -33,7 +33,7 @@ const GlobalConfiguration = () => {
     };
 
   return (
-    <div className="flex justify-center items-center min-h-screen w-full ">
+    <div className="flex justify-center items-center min-h-screen w-full p-4 ">
       <Card className="w-full h-full shadow-lg rounded-xl bg-white">
         <CardHeader>
           <h2 className="text-2xl font-semibold text-gray-800 pb-6">Global Configuration</h2>
@@ -43,7 +43,7 @@ const GlobalConfiguration = () => {
           <div className="flex  space-x-4">
             <label className="w-1/8 text-lg font-medium text-gray-700 pt-1">Select Model</label>
             <Select value={model} onValueChange={setModel}>
-              <SelectTrigger className="w-1/6">
+              <SelectTrigger className="w-1/5">
                 <SelectValue placeholder="Select Model" />
               </SelectTrigger>
               <SelectContent>

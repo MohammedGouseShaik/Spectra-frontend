@@ -123,7 +123,8 @@ const PromptCard: React.FC = () => {
   };
 
   return (
-    <Card className="p-4 ml-5 mb-4 bg-white border border-gray-300 rounded-lg shadow-md h-[calc(108vh-90px)]">
+    <div className="p-4">
+    <Card className=" bg-white border border-gray-300 rounded-lg shadow-md h-full">
       <CardHeader>
         <CardTitle className="text-lg font-bold leading-[22.4px] text-left mb-2.5">
           Prompt Template
@@ -193,6 +194,7 @@ const PromptCard: React.FC = () => {
         </Button>
       </CardContent>
     </Card>
+    </div>
   );
 };
 

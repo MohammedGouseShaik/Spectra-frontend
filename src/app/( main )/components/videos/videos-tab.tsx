@@ -130,7 +130,7 @@ const VideosTab: React.FC = () => {
           {/* Upload Button */}
           <label>
             <Button
-              variant="outline"
+             
               className="flex items-center gap-2"
               onClick={() => document.getElementById("video-upload")?.click()}
             >
