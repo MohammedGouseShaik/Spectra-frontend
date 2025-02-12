@@ -25,6 +25,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
+  DynamicBreadcrumbs,
   // BreadcrumbPage,
   // BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
@@ -66,17 +67,12 @@ export default function RootLayout({
               <div className="flex items-center gap-2 px-4">
                 <SidebarTrigger className="-ml-1" />
                 <Separator orientation="vertical" className="mr-2 h-4" />
-                <Breadcrumb>
-                  <BreadcrumbList>
-                    <BreadcrumbItem className="hidden md:block">
-                      <BreadcrumbLink href="/">Dashboard</BreadcrumbLink>
-                    </BreadcrumbItem>
-                    {/* <BreadcrumbSeparator className="hidden md:block" /> */}
-                    {/* <BreadcrumbItem>
-                      <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                    </BreadcrumbItem> */}
-                  </BreadcrumbList>
-                </Breadcrumb>
+                <DynamicBreadcrumbs
+                  containerClasses="flex items-center gap-2"
+                  listClasses="text-muted-foreground"
+                  activeClasses="font-semibold text-foreground"
+                  capitalizeLinks={true}
+                />
               </div>
             </header>
 
