@@ -372,7 +372,7 @@ const VideosTab: React.FC = () => {
   };
 
   return (
-    <div className="w-full p-4 pt-0 bg-white shadow-md rounded-xl h-screen flex flex-col">
+    <div className="w-full h-full p-4 pt-0 bg-white shadow-md rounded-xl flex flex-col">
       <div className="flex justify-between items-center mb-4">
         <Tabs value={tab} onValueChange={setTab} className="w-auto">
           <TabsList>

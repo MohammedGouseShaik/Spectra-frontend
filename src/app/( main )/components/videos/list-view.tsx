@@ -8,7 +8,7 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { UploadCloud, Play, Loader, RefreshCcw } from "lucide-react";
+import {  Play, Loader, RefreshCcw } from "lucide-react";
 import Image from "next/image";
 import axios from "axios";
 
@@ -50,28 +50,8 @@ const ListView: React.FC<{ videos: Video[] }> = ({ videos }) => {
   }, [videos]);
 
   return (
-<<<<<<< HEAD
-    <div className="space-y-4">
-      {videos.map((video) => (
-        <div
-          key={video.id}
-          className="flex items-center bg-gray-200 p-2 rounded-lg shadow-md"
-        >
-          <Image
-            src={video.thumbnail}
-            alt={video.title}
-            className="w-20 h-20 object-cover rounded-md"
-          />
-          <p className="ml-4 text-sm font-medium">{video.title}</p>
-        </div>
-      ))}
-=======
     <div className="max-w-auto mx-auto p-0">
-      {/* <div className="flex justify-end mb-4">
-        <Button variant="outline">
-          <UploadCloud className="w-5 h-5 mr-2" /> Upload Video
-        </Button>
-      </div> */}
+    
       <Table>
         <TableHeader>
           <TableRow>
@@ -127,7 +107,6 @@ const ListView: React.FC<{ videos: Video[] }> = ({ videos }) => {
           ))}
         </TableBody>
       </Table>
->>>>>>> cde6ba7838438c1b647cad1b5a3d76be2d1e4bb1
     </div>
   );
 };
