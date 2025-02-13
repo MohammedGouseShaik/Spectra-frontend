@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface GridViewProps {
   videos: { id: string; title: string; thumbnail: string }[];
@@ -9,7 +10,7 @@ const GridView: React.FC<GridViewProps> = ({ videos }) => {
     <div className="grid grid-cols-3 gap-4">
       {videos.map((video) => (
         <div key={video.id} className="bg-gray-200 p-2 rounded-lg shadow-md">
-          <img
+          <Image
             src={video.thumbnail}
             alt={video.title}
             className="w-full h-40 object-cover rounded-md"

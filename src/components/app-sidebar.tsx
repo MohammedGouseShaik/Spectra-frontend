@@ -58,49 +58,48 @@ const data = {
       title: "Dashboard",
       url: "/dashboard",
       icon: LayoutDashboard,
-      isActive: false,
-      items: [
-        {
-          title: "Accidents",
-          url: "#",
-        },
-        {
-          title: "Analytics",
-          url: "#",
-        },
-        {
-          title: "Hotspots",
-          url: "#",
-        },
-      ],
+      // items: [
+      //   {
+      //     title: "Accidents",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Analytics",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Hotspots",
+      //     url: "#",
+      //   },
+      // ],
     },
     {
       title: "Configurations",
-      url: "/global-configuration",
       icon: Settings2,
+      url: "#",
       items: [
         {
           title: "Global Configuration",
-          url: "#",
+          url: "/global-configuration",
         },
         {
           title: "Model Configuration",
-          url: "#",
+          url: "/model-configuration",
         },
         {
           title: "Prompt Configuration",
-          url: "#",
+          url: "/prompt-configuration",
         },
       ],
     },
     {
       title: "Videos",
-      url: "/videos-page",
+      url: "#",
       icon: Video,
       items: [
         {
           title: "My Videos",
-          url: "#",
+          url: "/videos-page",
         },
         {
           title: "Sample Videos",
@@ -115,7 +114,7 @@ const data = {
       items: [
         {
           title: "Profile",
-          url: "#",
+          url: "/user-settings",
         },
         {
           title: "Biling & Usage",
