@@ -110,7 +110,7 @@ const MyVideos = ({ searchQuery }: { searchQuery: string }) => {
 
   return (
     <TooltipProvider>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
         {filteredVideos.map((video) => (
           <Card key={video.id} className="w-full border shadow-sm">
             <Image

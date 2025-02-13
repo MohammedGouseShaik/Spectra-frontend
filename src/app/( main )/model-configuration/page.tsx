@@ -95,7 +95,7 @@ const ModelConfiguration = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen w-full">
+    <div className="flex justify-center items-center min-h-screen w-full p-4">
       <Card className="w-full h-full   bg-white">
         <CardHeader>
           <h2 className="text-2xl font-semibold text-gray-800 pb-6">Model Configuration</h2>
