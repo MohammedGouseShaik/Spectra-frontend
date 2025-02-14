@@ -124,76 +124,76 @@ const PromptCard: React.FC = () => {
 
   return (
     <div className="p-4">
-    <Card className=" bg-white border border-gray-300 rounded-lg shadow-md h-full">
-      <CardHeader>
-        <CardTitle className="text-lg font-bold leading-[22.4px] text-left mb-2.5">
-          Prompt Template
-        </CardTitle>
-        <CardDescription className="text-sm font-normal leading-[19.6px] text-left text-gray-500 mb-0">
-          Give instructions to the model
-        </CardDescription>
-      </CardHeader>
+      <Card className=" bg-white border border-gray-300 rounded-lg shadow-md h-full min-h-[500px] max-h-[90vh] flex flex-col">
+        <CardHeader>
+          <CardTitle className="text-lg font-bold leading-[22.4px] text-left mb-2.5">
+            System Prompt 
+          </CardTitle>
+          <CardDescription className="text-sm font-normal leading-[19.6px] text-left text-gray-500 mb-0">
+            Give instructions to the model
+          </CardDescription>
+        </CardHeader>
 
-      <CardContent>
-        <Textarea
-          value={promptText}
-          onChange={(e) =>
-            handleTextChange(e, setPromptText, setPromptError, 500)
-          }
-          placeholder="Please type your text here..."
-          className="w-full h-[150px] p-2.5 text-sm leading-5 border border-gray-300 rounded-lg resize-y placeholder-opacity-100"
-          disabled={loading}
-        />
+        <CardContent className="flex flex-col flex-grow">
+          <Textarea
+            value={promptText}
+            onChange={(e) =>
+              handleTextChange(e, setPromptText, setPromptError, 500)
+            }
+            placeholder="Please type your text here..."
+            className="w-full h-[200px] min-h-[200px] max-h-[50vh] p-2.5 text-sm leading-5 border border-gray-300 rounded-lg resize-y placeholder-opacity-100"
+            disabled={loading}
+          />
 
-        <Separator className="my-3 border border-gray-300" />
+          <Separator className="my-3 border border-gray-300" />
 
-        {promptError && (
-          <p className="text-red-500 text-xs leading-[10px]">{promptError}</p>
-        )}
-
-        <CardTitle className="text-lg font-bold leading-10 text-left mt-2.5">
-          Comment
-        </CardTitle>
-
-        <Textarea
-          value={commentText}
-          onChange={(e) =>
-            handleTextChange(e, setCommentText, setCommentError, 100)
-          }
-          placeholder="Please type your text here..."
-          className="w-full h-[51px] p-2.5 text-sm leading-[36px] border border-gray-300 rounded-lg placeholder-opacity-100 overflow-hidden"
-          disabled={loading}
-        />
-
-        <Separator className="my-3 border border-gray-300" />
-
-        {commentError && (
-          <p className="text-red-500 text-xs mt-[-5px] leading-5">
-            {commentError}
-          </p>
-        )}
-
-        <Button
-          variant="outline"
-          onClick={handleSave}
-          disabled={loading}
-          className={`bg-black text-white text-sm capitalize mt-7 ${
-            isSaved ? "w-[90px]" : "w-[156px]"
-          } flex items-center gap-0 hover:bg-black/90`}
-        >
-          {loading ? (
-            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-          ) : (
-            <>
-              <Check className="text-white w-4 h-4 mr-2" />
-              <span className="text-white mr-2">
-                {isSaved ? "Saved" : "Save Changes"}
-              </span>
-            </>
+          {promptError && (
+            <p className="text-red-500 text-xs leading-[10px]">{promptError}</p>
           )}
-        </Button>
-      </CardContent>
-    </Card>
+
+          <CardTitle className="text-lg font-bold leading-10 text-left mt-2.5">
+            Comment
+          </CardTitle>
+
+          <Textarea
+            value={commentText}
+            onChange={(e) =>
+              handleTextChange(e, setCommentText, setCommentError, 100)
+            }
+            placeholder="Please type your text here..."
+            className="w-full min-h-[50px] max-h-[30vh] p-2.5 text-sm leading-[36px] border border-gray-300 rounded-lg placeholder-opacity-100 overflow-hidden"
+            disabled={loading}
+          />
+
+          <Separator className="my-3 border border-gray-300" />
+
+          {commentError && (
+            <p className="text-red-500 text-xs mt-[-5px] leading-5">
+              {commentError}
+            </p>
+          )}
+
+          <Button
+            variant="outline"
+            onClick={handleSave}
+            disabled={loading}
+            className={`bg-black text-white text-sm capitalize mt-7 ${
+              isSaved ? "w-[90px]" : "w-[156px]"
+            } flex items-center gap-0 hover:bg-black/90`}
+          >
+            {loading ? (
+              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+            ) : (
+              <>
+                <Check className="text-white w-4 h-4 mr-2" />
+                <span className="text-white mr-2">
+                  {isSaved ? "Saved" : "Save Changes"}
+                </span>
+              </>
+            )}
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   );
 };

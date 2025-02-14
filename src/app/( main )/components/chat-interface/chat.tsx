@@ -1,4 +1,3 @@
-
 "use client";
 // import { Card, CardContent } from "@/components/ui/card";
 // import { ScrollArea } from "@/components/ui/scroll-area";
@@ -33,7 +32,7 @@
 //             <Play className="w-16 h-16 text-white" />
 //           </CardContent>
 //         </Card>
-        
+
 //         {/* Chat Input */}
 //         <Card className="mt-4">
 //           <CardContent className="p-4 flex items-center space-x-2">
@@ -57,8 +56,20 @@ import { Separator } from "@/components/ui/separator";
 
 const chatHistoryItems = [
   { id: 1, name: "Alice", message: "Hello!", date: new Date(), read: false },
-  { id: 2, name: "Bob", message: "How's it going?", date: new Date(), read: true },
-  { id: 3, name: "Charlie", message: "Need some help?", date: new Date(), read: false },
+  {
+    id: 2,
+    name: "Bob",
+    message: "How's it going?",
+    date: new Date(),
+    read: true,
+  },
+  {
+    id: 3,
+    name: "Charlie",
+    message: "Need some help?",
+    date: new Date(),
+    read: false,
+  },
 ];
 
 export default function ChatHistoryComponent() {
@@ -84,17 +95,21 @@ export default function ChatHistoryComponent() {
                       <span className="flex h-2 w-2 rounded-full bg-blue-600" />
                     )}
                     <div className="ml-auto text-xs text-muted-foreground">
-                      {formatDistanceToNow(new Date(item.date), { addSuffix: true })}
+                      {formatDistanceToNow(new Date(item.date), {
+                        addSuffix: true,
+                      })}
                     </div>
                   </div>
-                  <div className="text-xs text-muted-foreground">{item.message}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {item.message}
+                  </div>
                 </div>
               </button>
             ))}
           </div>
         </ScrollArea>
       </aside>
-      
+
       {/* Main Content */}
       <main className="flex-1 flex flex-col">
         {/* Video Player */}
@@ -104,20 +119,33 @@ export default function ChatHistoryComponent() {
             Your browser does not support the video tag.
           </video>
         </div>
-        
+
         {/* Chat Section */}
         <ScrollArea className="flex-1 p-4 space-y-4 bg-white">
           {[...Array(6)].map((_, i) => (
-            <div key={i} className={`flex items-start space-x-3 ${i % 2 === 0 ? 'justify-end' : 'justify-start'}`}> 
+            <div
+              key={i}
+              className={`flex items-start space-x-3 ${
+                i % 2 === 0 ? "justify-end" : "justify-start"
+              }`}
+            >
               {i % 2 !== 0 && <User className="w-6 h-6 text-green-500" />}
-              <div className={`p-3 rounded-lg ${i % 2 === 0 ? 'bg-blue-100 text-right' : 'bg-green-100 text-left'}`}> 
-                {i % 2 === 0 ? "Hello! How can I assist you?" : "I need some information about your services."}
+              <div
+                className={`p-3 rounded-lg ${
+                  i % 2 === 0
+                    ? "bg-blue-100 text-right"
+                    : "bg-green-100 text-left"
+                }`}
+              >
+                {i % 2 === 0
+                  ? "Hello! How can I assist you?"
+                  : "I need some information about your services."}
               </div>
               {i % 2 === 0 && <Bot className="w-6 h-6 text-blue-500" />}
             </div>
           ))}
         </ScrollArea>
-        
+
         {/* Chat Input */}
         <div className="border-t p-4 bg-white shadow-md flex items-center space-x-3">
           <Input
